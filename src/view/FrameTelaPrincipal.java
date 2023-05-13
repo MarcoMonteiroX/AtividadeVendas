@@ -86,6 +86,11 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         menuItemFornecedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FORNECEDOR-LOGO.png"))); // NOI18N
         menuItemFornecedor.setText("Fornecedor");
+        menuItemFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemFornecedorActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuItemFornecedor);
 
         menuItemProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -155,6 +160,12 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         tela.setVisible(true);
         desktopPanel.add(tela);
     }//GEN-LAST:event_menuItemSobreActionPerformed
+
+    private void menuItemFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemFornecedorActionPerformed
+        FrameFornecedor tela = new FrameFornecedor();
+        tela.setVisible(true);
+        desktopPanel.add(tela);
+    }//GEN-LAST:event_menuItemFornecedorActionPerformed
 
     /**
      * @param args the command line arguments

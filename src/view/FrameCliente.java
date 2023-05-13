@@ -10,7 +10,6 @@ import util.Constantes;
 public class FrameCliente extends javax.swing.JInternalFrame {
 
     private Constantes modo;
-    private ClienteDAO clienteDAO;
     private List<Cliente> clientes;
 
     public FrameCliente() {
