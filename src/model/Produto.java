@@ -13,6 +13,13 @@ public class Produto {
     public Produto() {
     }
 
+    public Produto(Integer fornecedorId, String nome, Integer quantidadeEstoque, Double valor) {
+        this.fornecedorId = fornecedorId;
+        this.nome = nome;
+        this.quantidadeEstoque = quantidadeEstoque;
+        this.valor = valor;
+    }
+
     public Produto(Integer id, Integer fornecedorId, String nome, Integer quantidadeEstoque, Double valor) {
         this.id = id;
         this.fornecedorId = fornecedorId;

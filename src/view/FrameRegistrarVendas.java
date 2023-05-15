@@ -4,17 +4,23 @@
  */
 package view;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author hehem
  */
 public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrameRegistrarVendas
-     */
+    private JDesktopPane panel;
+
     public FrameRegistrarVendas() {
         initComponents();
+    }
+
+    public FrameRegistrarVendas(JDesktopPane panel) {
+        initComponents();
+        this.panel = panel;
     }
 
     /**
@@ -37,7 +43,7 @@ public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         textFieldQuantidade = new javax.swing.JTextField();
         buttonIncluir = new javax.swing.JButton();
-        buttonNaoSei = new javax.swing.JButton();
+        buttonConsultarCliente = new javax.swing.JButton();
         textFieldCliente = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -115,6 +121,7 @@ public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel2.add(textFieldQuantidade, gridBagConstraints);
 
@@ -126,13 +133,13 @@ public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel2.add(buttonIncluir, gridBagConstraints);
 
-        buttonNaoSei.setText("...");
+        buttonConsultarCliente.setText("...");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        jPanel2.add(buttonNaoSei, gridBagConstraints);
+        jPanel2.add(buttonConsultarCliente, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -194,10 +201,14 @@ public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints.weighty = 1.0;
         getContentPane().add(jPanel3, gridBagConstraints);
 
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+        java.awt.FlowLayout flowLayout2 = new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT);
+        flowLayout2.setAlignOnBaseline(true);
+        jPanel4.setLayout(flowLayout2);
 
         jLabel1.setText("Valor Total:");
         jPanel4.add(jLabel1);
+
+        textFieldValorTotal.setText("                      ");
         jPanel4.add(textFieldValorTotal);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -228,9 +239,9 @@ public class FrameRegistrarVendas extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonConsultarCliente;
     private javax.swing.JButton buttonExcluirItem;
     private javax.swing.JButton buttonIncluir;
-    private javax.swing.JButton buttonNaoSei;
     private javax.swing.JButton buttonNaoSei2;
     private javax.swing.JButton buttonSalvarItem;
     private javax.swing.JLabel jLabel1;

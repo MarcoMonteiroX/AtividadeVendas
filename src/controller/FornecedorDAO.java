@@ -12,7 +12,6 @@ public class FornecedorDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
     private List<Fornecedor> fornecedores;
-    private Fornecedor fornecedor;
 
     private final String CONSULTAR = "SELECT * FROM cvendas.fornecedor;";
     private final String CONSULTAR_POR_NOME = "SELECT * FROM cvendas.fornecedor WHERE fornecedor.NOME LIKE ?";

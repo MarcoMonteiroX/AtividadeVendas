@@ -112,7 +112,10 @@ public class FrameConsultarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints.weightx = 1.0;
         getContentPane().add(jPanel2, gridBagConstraints);
 
+        jPanel3.setMaximumSize(new java.awt.Dimension(462, 412));
         jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jScrollPane1.setMaximumSize(new java.awt.Dimension(Short.MAX_VALUE, 402));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,6 +140,7 @@ public class FrameConsultarVendas extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setMinimumSize(new java.awt.Dimension(16, 20));
         jScrollPane1.setViewportView(jTable1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -149,6 +153,7 @@ public class FrameConsultarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -168,7 +173,10 @@ public class FrameConsultarVendas extends javax.swing.JInternalFrame {
         gridBagConstraints.weightx = 1.0;
         getContentPane().add(jPanel4, gridBagConstraints);
 
+        jPanel5.setMaximumSize(new java.awt.Dimension(462, 412));
         jPanel5.setLayout(new java.awt.GridBagLayout());
+
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(Short.MAX_VALUE, 200));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,26 +186,36 @@ public class FrameConsultarVendas extends javax.swing.JInternalFrame {
                 "Produto", "QTDE", "Vlr. Unit.", "Vlr. Total"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.setMaximumSize(new java.awt.Dimension(225, 20));
         jScrollPane2.setViewportView(jTable2);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel5.add(jScrollPane2, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.gridheight = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;

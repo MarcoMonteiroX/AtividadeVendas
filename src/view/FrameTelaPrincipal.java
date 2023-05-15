@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author hehem
@@ -15,7 +17,6 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
      */
     public FrameTelaPrincipal() {
         initComponents();
-
     }
 
     /**
@@ -50,11 +51,11 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         desktopPanel.setLayout(desktopPanelLayout);
         desktopPanelLayout.setHorizontalGroup(
             desktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 1280, Short.MAX_VALUE)
         );
         desktopPanelLayout.setVerticalGroup(
             desktopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 697, Short.MAX_VALUE)
         );
 
         menuSistema.setText("Sistema");
@@ -96,6 +97,11 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         menuItemProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuItemProduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PRODUTO-LOGO.png"))); // NOI18N
         menuItemProduto.setText("Produto");
+        menuItemProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemProdutoActionPerformed(evt);
+            }
+        });
         menuCadastro.add(menuItemProduto);
 
         menuBar.add(menuCadastro);
@@ -105,11 +111,21 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         menuItemRegistrarVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemRegistrarVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/REGISTRAR-LOGO.png"))); // NOI18N
         menuItemRegistrarVendas.setText("Registrar Vendas");
+        menuItemRegistrarVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemRegistrarVendasActionPerformed(evt);
+            }
+        });
         menuVendas.add(menuItemRegistrarVendas);
 
         menuItemConsultarVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuItemConsultarVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/REGISTRAR-LOGO.png"))); // NOI18N
         menuItemConsultarVendas.setText("Consultar Vendas");
+        menuItemConsultarVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemConsultarVendasActionPerformed(evt);
+            }
+        });
         menuVendas.add(menuItemConsultarVendas);
 
         menuBar.add(menuVendas);
@@ -141,7 +157,7 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
             .addComponent(desktopPanel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        setSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(1296, 728));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -153,6 +169,7 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         FrameCliente tela = new FrameCliente();
         tela.setVisible(true);
         desktopPanel.add(tela);
+
     }//GEN-LAST:event_menuItemClienteActionPerformed
 
     private void menuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSobreActionPerformed
@@ -166,6 +183,24 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         tela.setVisible(true);
         desktopPanel.add(tela);
     }//GEN-LAST:event_menuItemFornecedorActionPerformed
+
+    private void menuItemProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemProdutoActionPerformed
+        FrameProduto tela = new FrameProduto(this.desktopPanel);
+        tela.setVisible(true);
+        desktopPanel.add(tela);
+    }//GEN-LAST:event_menuItemProdutoActionPerformed
+
+    private void menuItemRegistrarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemRegistrarVendasActionPerformed
+        FrameRegistrarVendas tela = new FrameRegistrarVendas(this.desktopPanel);
+        tela.setVisible(true);
+        desktopPanel.add(tela);
+    }//GEN-LAST:event_menuItemRegistrarVendasActionPerformed
+
+    private void menuItemConsultarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemConsultarVendasActionPerformed
+        FrameConsultarVendas tela = new FrameConsultarVendas();
+        tela.setVisible(true);
+        desktopPanel.add(tela);
+    }//GEN-LAST:event_menuItemConsultarVendasActionPerformed
 
     /**
      * @param args the command line arguments

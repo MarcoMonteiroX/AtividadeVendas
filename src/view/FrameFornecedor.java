@@ -19,9 +19,17 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
 
     private Constantes modo;
     private List<Fornecedor> fornecedores;
+    private Fornecedor fornecedor;
+    private FrameProduto produto;
 
     public FrameFornecedor() {
         initComponents();
+    }
+
+    public FrameFornecedor(FrameProduto produto, boolean botaoVisivel) {
+        this.produto = produto;
+        initComponents();
+        buttonSelecionarFornecedor.setVisible(botaoVisivel);
     }
 
     private void listar() {
@@ -493,6 +501,12 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
         jPanel4.setLayout(flowLayout2);
 
         buttonSelecionarFornecedor.setText("Selecionar Fornecedor");
+        buttonSelecionarFornecedor.setVisible(false);
+        buttonSelecionarFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSelecionarFornecedorActionPerformed(evt);
+            }
+        });
         jPanel4.add(buttonSelecionarFornecedor);
 
         buttonNovo.setText("Novo");
@@ -608,6 +622,16 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
         desabilitarCampos();
         desabilitarBotoes();
     }//GEN-LAST:event_buttonCancelarActionPerformed
+
+    private void buttonSelecionarFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelecionarFornecedorActionPerformed
+        if (tableFornecedores.getSelectedRow() != -1) {
+            fornecedor = fornecedores.get(tableFornecedores.getSelectedRow());
+            produto.addFornecedor(fornecedor);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione algum fornecedor!", "Mensagem de erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonSelecionarFornecedorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
