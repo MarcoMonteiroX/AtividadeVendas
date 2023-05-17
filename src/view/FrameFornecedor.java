@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.FornecedorDAO;
@@ -11,10 +7,6 @@ import javax.swing.table.DefaultTableModel;
 import model.Fornecedor;
 import util.Constantes;
 
-/**
- *
- * @author hehem
- */
 public class FrameFornecedor extends javax.swing.JInternalFrame {
 
     private Constantes modo;
@@ -224,12 +216,46 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
         buttonExcluir = new javax.swing.JButton();
         buttonSalvar = new javax.swing.JButton();
         buttonCancelar = new javax.swing.JButton();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel5 = new javax.swing.JPanel();
+        labelFornecedor1 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        labelFiltro1 = new javax.swing.JLabel();
+        textFieldFiltro1 = new javax.swing.JTextField();
+        buttonPesquisar1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableFornecedores1 = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        labelNome1 = new javax.swing.JLabel();
+        textFieldNome1 = new javax.swing.JTextField();
+        labelEmail1 = new javax.swing.JLabel();
+        textFieldEmail1 = new javax.swing.JTextField();
+        labelEndereco1 = new javax.swing.JLabel();
+        textFieldEndereco1 = new javax.swing.JTextField();
+        labelBairro1 = new javax.swing.JLabel();
+        textFieldBairro1 = new javax.swing.JTextField();
+        labelCidade1 = new javax.swing.JLabel();
+        textFieldCidade1 = new javax.swing.JTextField();
+        labelUF1 = new javax.swing.JLabel();
+        comboBoxUF1 = new javax.swing.JComboBox<>();
+        labelCEP1 = new javax.swing.JLabel();
+        textFieldCEP1 = new javax.swing.JFormattedTextField();
+        labelTelefone1 = new javax.swing.JLabel();
+        textFieldTelefone1 = new javax.swing.JFormattedTextField();
+        jPanel8 = new javax.swing.JPanel();
+        buttonSelecionarFornecedor1 = new javax.swing.JButton();
+        buttonNovo1 = new javax.swing.JButton();
+        buttonAlterar1 = new javax.swing.JButton();
+        buttonExcluir1 = new javax.swing.JButton();
+        buttonSalvar1 = new javax.swing.JButton();
+        buttonCancelar1 = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Fornecedor - Projeto, TADS");
         setToolTipText("");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LOGO.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(784, 539));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -557,6 +583,340 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         getContentPane().add(jPanel4, gridBagConstraints);
 
+        jInternalFrame1.setClosable(true);
+        jInternalFrame1.setIconifiable(true);
+        jInternalFrame1.setMaximizable(true);
+        jInternalFrame1.setTitle("Fornecedor - Projeto, TADS");
+        jInternalFrame1.setToolTipText("");
+        jInternalFrame1.setPreferredSize(new java.awt.Dimension(784, 539));
+        jInternalFrame1.addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                jInternalFrame1formInternalFrameOpened(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jPanel5.setBackground(java.awt.SystemColor.activeCaption);
+        java.awt.FlowLayout flowLayout3 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT);
+        flowLayout3.setAlignOnBaseline(true);
+        jPanel5.setLayout(flowLayout3);
+
+        labelFornecedor1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        labelFornecedor1.setForeground(new java.awt.Color(255, 255, 255));
+        labelFornecedor1.setText("Fornecedor");
+        jPanel5.add(labelFornecedor1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        jInternalFrame1.getContentPane().add(jPanel5, gridBagConstraints);
+
+        jPanel6.setLayout(new java.awt.GridBagLayout());
+
+        labelFiltro1.setText("Filtro p/ Nome:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel6.add(labelFiltro1, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel6.add(textFieldFiltro1, gridBagConstraints);
+
+        buttonPesquisar1.setText("Pesquisar");
+        buttonPesquisar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPesquisar1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel6.add(buttonPesquisar1, gridBagConstraints);
+
+        tableFornecedores1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null}
+            },
+            new String [] {
+                "ID", "Nome"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableFornecedores1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableFornecedores1MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tableFornecedores1);
+        if (tableFornecedores1.getColumnModel().getColumnCount() > 0) {
+            tableFornecedores1.getColumnModel().getColumn(0).setMinWidth(1);
+            tableFornecedores1.getColumnModel().getColumn(0).setMaxWidth(200);
+        }
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel6.add(jScrollPane2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 1.0;
+        jInternalFrame1.getContentPane().add(jPanel6, gridBagConstraints);
+
+        jPanel7.setLayout(new java.awt.GridBagLayout());
+
+        labelNome1.setText("Nome:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelNome1, gridBagConstraints);
+
+        textFieldNome1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldNome1, gridBagConstraints);
+
+        labelEmail1.setText("Email:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelEmail1, gridBagConstraints);
+
+        textFieldEmail1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldEmail1, gridBagConstraints);
+
+        labelEndereco1.setText("Endereço:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelEndereco1, gridBagConstraints);
+
+        textFieldEndereco1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldEndereco1, gridBagConstraints);
+
+        labelBairro1.setText("Bairro:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelBairro1, gridBagConstraints);
+
+        textFieldBairro1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldBairro1, gridBagConstraints);
+
+        labelCidade1.setText("Cidade:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelCidade1, gridBagConstraints);
+
+        textFieldCidade1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldCidade1, gridBagConstraints);
+
+        labelUF1.setText("UF:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelUF1, gridBagConstraints);
+
+        comboBoxUF1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MT", "RS", "MG" }));
+        comboBoxUF1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(comboBoxUF1, gridBagConstraints);
+
+        labelCEP1.setText("CEP:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelCEP1, gridBagConstraints);
+
+        try {
+            textFieldCEP1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textFieldCEP1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldCEP1, gridBagConstraints);
+
+        labelTelefone1.setText("Telefone:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(labelTelefone1, gridBagConstraints);
+
+        try {
+            textFieldTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textFieldTelefone1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        jPanel7.add(textFieldTelefone1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jInternalFrame1.getContentPane().add(jPanel7, gridBagConstraints);
+
+        java.awt.FlowLayout flowLayout4 = new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT);
+        flowLayout4.setAlignOnBaseline(true);
+        jPanel8.setLayout(flowLayout4);
+
+        buttonSelecionarFornecedor1.setText("Selecionar Fornecedor");
+        buttonSelecionarFornecedor.setVisible(false);
+        buttonSelecionarFornecedor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSelecionarFornecedor1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonSelecionarFornecedor1);
+
+        buttonNovo1.setText("Novo");
+        buttonNovo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonNovo1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonNovo1);
+
+        buttonAlterar1.setText("Alterar");
+        buttonAlterar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAlterar1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonAlterar1);
+
+        buttonExcluir1.setText("Excluir");
+        buttonExcluir1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExcluir1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonExcluir1);
+
+        buttonSalvar1.setText("Salvar");
+        buttonSalvar1.setEnabled(false);
+        buttonSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSalvar1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonSalvar1);
+
+        buttonCancelar1.setText("Cancelar");
+        buttonCancelar1.setEnabled(false);
+        buttonCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelar1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(buttonCancelar1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        jInternalFrame1.getContentPane().add(jPanel8, gridBagConstraints);
+
+        getContentPane().add(jInternalFrame1, new java.awt.GridBagConstraints());
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -633,39 +993,108 @@ public class FrameFornecedor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_buttonSelecionarFornecedorActionPerformed
 
+    private void buttonPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPesquisar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonPesquisar1ActionPerformed
+
+    private void tableFornecedores1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableFornecedores1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableFornecedores1MouseClicked
+
+    private void buttonSelecionarFornecedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelecionarFornecedor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSelecionarFornecedor1ActionPerformed
+
+    private void buttonNovo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonNovo1ActionPerformed
+
+    private void buttonAlterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAlterar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonAlterar1ActionPerformed
+
+    private void buttonExcluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExcluir1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonExcluir1ActionPerformed
+
+    private void buttonSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonSalvar1ActionPerformed
+
+    private void buttonCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCancelar1ActionPerformed
+
+    private void jInternalFrame1formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_jInternalFrame1formInternalFrameOpened
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jInternalFrame1formInternalFrameOpened
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAlterar;
+    private javax.swing.JButton buttonAlterar1;
     private javax.swing.JButton buttonCancelar;
+    private javax.swing.JButton buttonCancelar1;
     private javax.swing.JButton buttonExcluir;
+    private javax.swing.JButton buttonExcluir1;
     private javax.swing.JButton buttonNovo;
+    private javax.swing.JButton buttonNovo1;
     private javax.swing.JButton buttonPesquisar;
+    private javax.swing.JButton buttonPesquisar1;
     private javax.swing.JButton buttonSalvar;
+    private javax.swing.JButton buttonSalvar1;
     private javax.swing.JButton buttonSelecionarFornecedor;
+    private javax.swing.JButton buttonSelecionarFornecedor1;
     private javax.swing.JComboBox<String> comboBoxUF;
+    private javax.swing.JComboBox<String> comboBoxUF1;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelBairro;
+    private javax.swing.JLabel labelBairro1;
     private javax.swing.JLabel labelCEP;
+    private javax.swing.JLabel labelCEP1;
     private javax.swing.JLabel labelCidade;
+    private javax.swing.JLabel labelCidade1;
     private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelEmail1;
     private javax.swing.JLabel labelEndereco;
+    private javax.swing.JLabel labelEndereco1;
     private javax.swing.JLabel labelFiltro;
+    private javax.swing.JLabel labelFiltro1;
     private javax.swing.JLabel labelFornecedor;
+    private javax.swing.JLabel labelFornecedor1;
     private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelNome1;
     private javax.swing.JLabel labelTelefone;
+    private javax.swing.JLabel labelTelefone1;
     private javax.swing.JLabel labelUF;
+    private javax.swing.JLabel labelUF1;
     private javax.swing.JTable tableFornecedores;
+    private javax.swing.JTable tableFornecedores1;
     private javax.swing.JTextField textFieldBairro;
+    private javax.swing.JTextField textFieldBairro1;
     private javax.swing.JFormattedTextField textFieldCEP;
+    private javax.swing.JFormattedTextField textFieldCEP1;
     private javax.swing.JTextField textFieldCidade;
+    private javax.swing.JTextField textFieldCidade1;
     private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldEmail1;
     private javax.swing.JTextField textFieldEndereco;
+    private javax.swing.JTextField textFieldEndereco1;
     private javax.swing.JTextField textFieldFiltro;
+    private javax.swing.JTextField textFieldFiltro1;
     private javax.swing.JTextField textFieldNome;
+    private javax.swing.JTextField textFieldNome1;
     private javax.swing.JFormattedTextField textFieldTelefone;
+    private javax.swing.JFormattedTextField textFieldTelefone1;
     // End of variables declaration//GEN-END:variables
 }

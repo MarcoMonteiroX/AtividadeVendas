@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package view;
 
 import controller.FornecedorDAO;
@@ -14,17 +10,15 @@ import model.Fornecedor;
 import model.Produto;
 import util.Constantes;
 
-/**
- *
- * @author hehem
- */
 public class FrameProduto extends javax.swing.JInternalFrame {
 
     private Constantes modo;
     private List<Produto> produtos;
     private List<Fornecedor> fornecedores;
+    private Produto produto;
     private Fornecedor fornecedor;
     private JDesktopPane panel;
+    private FrameRegistrarVendas registrarVendas;
 
     public FrameProduto() {
         initComponents();
@@ -33,6 +27,12 @@ public class FrameProduto extends javax.swing.JInternalFrame {
     public FrameProduto(JDesktopPane panel) {
         this.panel = panel;
         initComponents();
+    }
+
+    public FrameProduto(FrameRegistrarVendas registrarVendas, boolean botaoVisibilidade) {
+        this.registrarVendas = registrarVendas;
+        initComponents();
+        buttonSelecionarProduto.setVisible(botaoVisibilidade);
     }
 
     private void listar() {
@@ -85,6 +85,7 @@ public class FrameProduto extends javax.swing.JInternalFrame {
         if (!textFieldNome.getText().isBlank()) {
             Produto produto = new Produto(
                     produtos.get(tableProdutos.getSelectedRow()).getId(),
+                    produtos.get(tableProdutos.getSelectedRow()).getFornecedorId(),
                     textFieldNome.getText().strip(),
                     Integer.parseInt(textFieldEstoque.getText()),
                     Double.parseDouble(textFieldValor.getText()));
@@ -117,7 +118,7 @@ public class FrameProduto extends javax.swing.JInternalFrame {
 
     private void mostrar(int i) {
         textFieldNome.setText(produtos.get(i).getNome());
-        textFieldFornecedor.setText(new ProdutoDAO().consultarFornecedor(produtos.get(i).getFornecedorId()));
+        textFieldFornecedor.setText(new ProdutoDAO().consultarNomeFornecedor(produtos.get(i).getFornecedorId()));
         textFieldEstoque.setText(produtos.get(i).getQuantidadeEstoque().toString());
         textFieldValor.setText(produtos.get(i).getValor().toString());
     }
@@ -136,6 +137,7 @@ public class FrameProduto extends javax.swing.JInternalFrame {
 
     private void limparCampos() {
         textFieldNome.setText("");
+        textFieldFornecedor.setText("");
         textFieldEstoque.setText("");
         textFieldValor.setText("");
     }
@@ -160,10 +162,10 @@ public class FrameProduto extends javax.swing.JInternalFrame {
 
     public void addFornecedor(Fornecedor fornecedor) {
         this.fornecedor = fornecedor;
-        this.setText(this.fornecedor.getNome());
+        this.fornecedorSetText(this.fornecedor.getNome());
     }
 
-    private void setText(String texto) {
+    private void fornecedorSetText(String texto) {
         this.textFieldFornecedor.setText(texto);
     }
 
@@ -203,6 +205,7 @@ public class FrameProduto extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Produto - Projeto, TADS");
         setToolTipText("");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LOGO.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(784, 539));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -530,7 +533,13 @@ public class FrameProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
     private void buttonSelecionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelecionarProdutoActionPerformed
-
+        if (tableProdutos.getSelectedRow() != 1) {
+            produto = produtos.get(tableProdutos.getSelectedRow());
+            registrarVendas.addProduto(produto);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione algum produto!", "Mensagem de erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_buttonSelecionarProdutoActionPerformed
 
     private void formInternalFrameActivated(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameActivated

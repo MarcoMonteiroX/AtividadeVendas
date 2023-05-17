@@ -13,6 +13,11 @@ public class Venda {
     public Venda() {
     }
 
+    public Venda(Integer clienteId, Date dataVenda) {
+        this.clienteId = clienteId;
+        this.dataVenda = dataVenda;
+    }
+
     public Venda(Integer id, Integer clienteId, Date dataVenda) {
         this.id = id;
         this.clienteId = clienteId;

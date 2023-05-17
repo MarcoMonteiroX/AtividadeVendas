@@ -15,8 +15,8 @@ public class ProdutoDAO {
 
     private final String CONSULTAR = "SELECT * FROM cvendas.produto";
     private final String CONSULTAR_POR_NOME = "SELECT * FROM cvendas.produto WHERE produto.NOME LIKE ?";
-    private final String CONSULTAR_FORNECEDOR = "SELECT fornecedor.NOME FROM cvendas.produto INNER JOIN fornecedor ON (produto.FORNECEDOR_ID = fornecedor.ID) WHERE fornecedor.ID = ?";
-    private final String INSERIR = "INSERT INTO cvendas.produto (FORNECEDOR_ID, NOME, QTD_ESTOQUE, VALOR) VALUES (?, ?, ?, ?, ?)";
+    private final String CONSULTAR_FORNECEDOR_NOME = "SELECT fornecedor.NOME FROM cvendas.produto INNER JOIN fornecedor ON (produto.FORNECEDOR_ID = fornecedor.ID) WHERE fornecedor.ID = ?";
+    private final String INSERIR = "INSERT INTO cvendas.produto (FORNECEDOR_ID, NOME, QTD_ESTOQUE, VALOR) VALUES (?, ?, ?, ?)";
     private final String ALTERAR = "UPDATE cvendas.produto SET FORNECEDOR_ID = ?, NOME = ?, QTD_ESTOQUE = ?, VALOR = ? WHERE produto.ID = ?";
     private final String EXCLUIR_ITENS_VENDA = "DELETE FROM cvendas.itens_venda WHERE itens_venda.PRODUTO_ID = ?";
     private final String EXCLUIR_PRODUTO = "DELETE FROM cvendas.produto WHERE produto.ID = ?";
@@ -62,10 +62,10 @@ public class ProdutoDAO {
         return (!produtos.isEmpty()) ? produtos : null;
     }
 
-    public String consultarFornecedor(Integer fornecedorId) {
+    public String consultarNomeFornecedor(Integer fornecedorId) {
         String fornecedorNome = "";
         try {
-            preparedStatement = ConexaoBD.conectar().prepareStatement(CONSULTAR_FORNECEDOR);
+            preparedStatement = ConexaoBD.conectar().prepareStatement(CONSULTAR_FORNECEDOR_NOME);
             preparedStatement.setInt(1, fornecedorId);
             resultSet = preparedStatement.executeQuery();
 
@@ -95,7 +95,7 @@ public class ProdutoDAO {
 
     public boolean alterarProduto(Produto produto) {
         try {
-            preparedStatement = ConexaoBD.conectar().prepareCall(ALTERAR);
+            preparedStatement = ConexaoBD.conectar().prepareStatement(ALTERAR);
             preparedStatement.setInt(1, produto.getFornecedorId());
             preparedStatement.setString(2, produto.getNome());
             preparedStatement.setInt(3, produto.getQuantidadeEstoque());

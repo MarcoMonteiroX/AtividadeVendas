@@ -11,9 +11,17 @@ public class FrameCliente extends javax.swing.JInternalFrame {
 
     private Constantes modo;
     private List<Cliente> clientes;
+    private Cliente cliente;
+    private FrameRegistrarVendas registrarVendas;
 
     public FrameCliente() {
         initComponents();
+    }
+
+    public FrameCliente(FrameRegistrarVendas registrarVendas, boolean botaoVisibilidade) {
+        this.registrarVendas = registrarVendas;
+        initComponents();
+        buttonSelecionarCliente.setVisible(botaoVisibilidade);
     }
 
     private void listar() {
@@ -202,6 +210,7 @@ public class FrameCliente extends javax.swing.JInternalFrame {
         labelTelefone = new javax.swing.JLabel();
         textFieldTelefone = new javax.swing.JFormattedTextField();
         jPanel4 = new javax.swing.JPanel();
+        buttonSelecionarCliente = new javax.swing.JButton();
         buttonNovo = new javax.swing.JButton();
         buttonAlterar = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
@@ -212,6 +221,7 @@ public class FrameCliente extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setTitle("Cliente - Projeto, TADS");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LOGO.png"))); // NOI18N
         setPreferredSize(new java.awt.Dimension(784, 539));
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
@@ -477,6 +487,14 @@ public class FrameCliente extends javax.swing.JInternalFrame {
 
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
+        buttonSelecionarCliente.setText("Selecionar Cliente");
+        buttonSelecionarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSelecionarClienteActionPerformed(evt);
+            }
+        });
+        jPanel4.add(buttonSelecionarCliente);
+
         buttonNovo.setText("Novo");
         buttonNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -590,6 +608,16 @@ public class FrameCliente extends javax.swing.JInternalFrame {
         desabilitarBotoes();
     }//GEN-LAST:event_buttonCancelarActionPerformed
 
+    private void buttonSelecionarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSelecionarClienteActionPerformed
+        if (tableClientes.getSelectedRow() != -1) {
+            cliente = clientes.get(tableClientes.getSelectedRow());
+            registrarVendas.addCliente(cliente);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione algum cliente!", "Mensagem de erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonSelecionarClienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAlterar;
@@ -598,6 +626,7 @@ public class FrameCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton buttonNovo;
     private javax.swing.JButton buttonPesquisar;
     private javax.swing.JButton buttonSalvar;
+    private javax.swing.JButton buttonSelecionarCliente;
     private javax.swing.JComboBox<String> comboBoxUF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

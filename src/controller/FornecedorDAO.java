@@ -13,7 +13,7 @@ public class FornecedorDAO {
     private ResultSet resultSet;
     private List<Fornecedor> fornecedores;
 
-    private final String CONSULTAR = "SELECT * FROM cvendas.fornecedor;";
+    private final String CONSULTAR = "SELECT * FROM cvendas.fornecedor";
     private final String CONSULTAR_POR_NOME = "SELECT * FROM cvendas.fornecedor WHERE fornecedor.NOME LIKE ?";
     private final String INSERIR = "INSERT INTO cvendas.fornecedor (NOME, EMAIL, ENDERECO, BAIRRO, CIDADE, UF, CEP, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private final String ALTERAR = "UPDATE cvendas.fornecedor SET NOME = ?, EMAIL = ?, ENDERECO = ?, BAIRRO = ?, CIDADE = ?, UF = ?, CEP = ?, TELEFONE = ? WHERE fornecedor.ID = ?";
