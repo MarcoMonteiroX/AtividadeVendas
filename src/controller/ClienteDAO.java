@@ -12,7 +12,6 @@ public class ClienteDAO {
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
     private List<Cliente> clientes;
-    private Cliente cliente;
 
     private final String consultar = "SELECT * FROM cliente";
     private final String consultarPorNome = "SELECT * FROM cliente WHERE cliente.NOME LIKE ?";

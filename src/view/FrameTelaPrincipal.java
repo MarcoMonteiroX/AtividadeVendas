@@ -4,8 +4,20 @@ import javax.swing.ImageIcon;
 
 public class FrameTelaPrincipal extends javax.swing.JFrame {
 
+    boolean administrador = false;
+
     public FrameTelaPrincipal() {
         initComponents();
+    }
+
+    public FrameTelaPrincipal(boolean administrador) {
+        initComponents();
+        if (!administrador) {
+            menuItemUsuario.setEnabled(false);
+            menuItemUsuario.setVisible(false);
+            menuItemConsultarVendas.setEnabled(false);
+            menuItemConsultarVendas.setVisible(false);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -20,6 +32,7 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         menuItemCliente = new javax.swing.JMenuItem();
         menuItemFornecedor = new javax.swing.JMenuItem();
         menuItemProduto = new javax.swing.JMenuItem();
+        menuItemUsuario = new javax.swing.JMenuItem();
         menuVendas = new javax.swing.JMenu();
         menuItemRegistrarVendas = new javax.swing.JMenuItem();
         menuItemConsultarVendas = new javax.swing.JMenuItem();
@@ -30,7 +43,6 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         setTitle("Tela Principal - Projeto, TADS");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(new ImageIcon(getClass().getResource("/images/LOGO.png")).getImage());
-        setResizable(false);
 
         javax.swing.GroupLayout desktopPanelLayout = new javax.swing.GroupLayout(desktopPanel);
         desktopPanel.setLayout(desktopPanelLayout);
@@ -88,6 +100,16 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
             }
         });
         menuCadastro.add(menuItemProduto);
+
+        menuItemUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        menuItemUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CLIENTE-LOGO.png"))); // NOI18N
+        menuItemUsuario.setText("Usuario");
+        menuItemUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemUsuarioActionPerformed(evt);
+            }
+        });
+        menuCadastro.add(menuItemUsuario);
 
         menuBar.add(menuCadastro);
 
@@ -187,6 +209,12 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
         desktopPanel.add(tela);
     }//GEN-LAST:event_menuItemConsultarVendasActionPerformed
 
+    private void menuItemUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUsuarioActionPerformed
+        FrameUsuario tela = new FrameUsuario();
+        tela.setVisible(true);
+        desktopPanel.add(tela);
+    }//GEN-LAST:event_menuItemUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +263,7 @@ public class FrameTelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemRegistrarVendas;
     private javax.swing.JMenuItem menuItemSair;
     private javax.swing.JMenuItem menuItemSobre;
+    private javax.swing.JMenuItem menuItemUsuario;
     private javax.swing.JMenu menuSistema;
     private javax.swing.JMenu menuVendas;
     // End of variables declaration//GEN-END:variables
